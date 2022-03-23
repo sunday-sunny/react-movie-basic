@@ -55,7 +55,7 @@ function Header() {
       <Nav>
         <ul>
           <li>
-            <Link to="/rate">10.0 RATE</Link>
+            <Link to="/rate">HIGH RATE</Link>
           </li>
           <li>You Like</li>
           <li>GitHub</li>
