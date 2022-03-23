@@ -44,9 +44,11 @@ function Movie({ id, bgImg, coverImg, title, year, genres }) {
 
     ul {
       display: flex;
+      flex-wrap: wrap;
 
       li {
         margin-right: 10px;
+        margin-bottom: 10px;
         background-color: black;
         padding: 4px 8px;
         font-size: 14px;
