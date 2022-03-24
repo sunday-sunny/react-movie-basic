@@ -37,7 +37,7 @@ const Title = styled.div`
   font-size: 48px;
   font-weight: 700;
   font-style: italic;
-  margin-top: 50px;
+  margin-top: 120px;
 `;
 
 /* React Component */

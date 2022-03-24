@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { FaGithub } from "react-icons/fa";
+import { useState } from "react";
 
 /* Styled component */
 const HeaderBlock = styled.div`
@@ -9,13 +10,25 @@ const HeaderBlock = styled.div`
   width: 100%;
   height: 60px;
   padding: 0px 20px;
-  background-color: black;
   color: white;
   justify-content: space-between;
   font-size: 20px;
   font-weight: 700;
-  /* position: fixed; */
-  /* top: 0; */
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: black;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+  &.visible {
+    background-color: black;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
   h1 {
     margin-left: 10px;
     background: linear-gradient(to right, #f7797d, #fbd786, #c6ffdd);
@@ -47,8 +60,17 @@ const Nav = styled.nav`
 
 /* React Component */
 function Header() {
+  /* Header Scroll Event */
+  const [scroll, setScroll] = useState(0);
+
+  const handleScroll = () => {
+    setScroll(document.documentElement.scrollTop);
+  };
+
+  window.addEventListener("scroll", handleScroll);
+
   return (
-    <HeaderBlock>
+    <HeaderBlock className={scroll > 0 ? "visible" : null}>
       <h1>
         <Link to="/">HOME</Link>
       </h1>

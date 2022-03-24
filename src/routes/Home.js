@@ -6,7 +6,7 @@ import { faHeart, faDownload, faStar } from "@fortawesome/free-solid-svg-icons";
 /* Styled component */
 const HomeBlock = styled.div`
   width: 1400px;
-  margin: 60px auto;
+  margin: 120px auto;
 `;
 
 const Title = styled.h1`
