@@ -1,5 +1,7 @@
 import Slide from "../components/Slide";
 import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart, faDownload, faStar } from "@fortawesome/free-solid-svg-icons";
 
 /* Styled component */
 const HomeBlock = styled.div`
@@ -14,6 +16,12 @@ const Title = styled.h1`
   font-style: italic;
   margin-left: 125px;
   margin-bottom: 20px;
+
+  .icon {
+    font-size: 32px;
+    margin-right: 15px;
+    margin-bottom: 5px;
+  }
 `;
 
 /* React Component */
@@ -29,10 +37,16 @@ function Home() {
 
   return (
     <div>
-      {apiSortArr.map((title) => {
+      {apiSortArr.map((title, index) => {
         return (
           <HomeBlock>
-            <Title>{title}</Title>
+            <Title>
+              <FontAwesomeIcon
+                icon={index === 0 ? faHeart : index === 1 ? faDownload : faStar}
+                className="icon"
+              />
+              {title}
+            </Title>
             <Slide api={api + apiSort[title]} />
           </HomeBlock>
         );
