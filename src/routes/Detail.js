@@ -57,7 +57,7 @@ function Detail() {
               id={movie.id}
               bgImg={movie.background_image}
               coverImg={movie.large_cover_image}
-              title={movie.title}
+              title={movie.title_english}
               description={movie.description_full}
               year={movie.year}
               genres={movie.genres}

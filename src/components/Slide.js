@@ -96,7 +96,7 @@ function Slide({ api }) {
               {movies.map((movie) => (
                 <MovieSlide
                   id={movie.id}
-                  title={movie.title}
+                  title={movie.title_english}
                   coverImg={movie.medium_cover_image}
                 />
               ))}

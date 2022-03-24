@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Movie from "../components/Movie";
+import MovieCard from "../components/MovieCard";
 import styled from "styled-components";
 import { Link, useParams } from "react-router-dom";
 
@@ -71,12 +71,12 @@ function Rate() {
           <Movies>
             {movies.map((movie) => (
               <Link to={`/movie/${movie.id}`}>
-                <Movie
+                <MovieCard
                   key={movie.id}
                   id={movie.id}
                   bgImg={movie.background_image}
                   coverImg={movie.medium_cover_image}
-                  title={movie.title}
+                  title={movie.title_english}
                   year={movie.year}
                   genres={movie.genres}
                 />
