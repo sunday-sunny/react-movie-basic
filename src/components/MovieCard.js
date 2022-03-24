@@ -57,7 +57,7 @@ const MovieInfo = styled.div`
 `;
 
 /* React Component */
-function Movie({ id, bgImg, coverImg, title, year, genres }) {
+function MovieCard({ id, bgImg, coverImg, title, year, genres }) {
   return (
     <MovieBlock bgImg={bgImg}>
       <img src={coverImg}></img>
@@ -66,8 +66,8 @@ function Movie({ id, bgImg, coverImg, title, year, genres }) {
         <h2>{title}</h2>
         {genres !== null ? (
           <ul>
-            {genres.map((genre) => (
-              <li>{genre}</li>
+            {genres.map((genre, index) => (
+              <li key={index}>{genre}</li>
             ))}
           </ul>
         ) : null}
@@ -76,4 +76,4 @@ function Movie({ id, bgImg, coverImg, title, year, genres }) {
   );
 }
 
-export default Movie;
+export default MovieCard;

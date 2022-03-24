@@ -96,6 +96,7 @@ function Slide({ api }) {
             <Slides transX={trans}>
               {movies.map((movie) => (
                 <MovieSlide
+                  key={movie.id}
                   id={movie.id}
                   title={movie.title_english}
                   coverImg={movie.medium_cover_image}

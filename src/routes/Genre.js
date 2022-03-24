@@ -70,9 +70,8 @@ function Rate() {
           <Title>{genre.toUpperCase()} Movie List</Title>
           <Movies>
             {movies.map((movie) => (
-              <Link to={`/movie/${movie.id}`}>
+              <Link to={`/movie/${movie.id}`} key={movie.id}>
                 <MovieCard
-                  key={movie.id}
                   id={movie.id}
                   bgImg={movie.background_image}
                   coverImg={movie.medium_cover_image}

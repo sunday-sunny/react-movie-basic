@@ -39,7 +39,7 @@ function Home() {
     <div>
       {apiSortArr.map((title, index) => {
         return (
-          <HomeBlock>
+          <HomeBlock key={index}>
             <Title>
               <FontAwesomeIcon
                 icon={index === 0 ? faHeart : index === 1 ? faDownload : faStar}

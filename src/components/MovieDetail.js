@@ -121,8 +121,8 @@ function MovieDetail({
         <p>{description}</p>
         {genres !== null ? (
           <ul>
-            {genres.map((genre) => (
-              <li>{genre}</li>
+            {genres.map((genre, index) => (
+              <li key={index}>{genre}</li>
             ))}
           </ul>
         ) : null}
@@ -130,9 +130,9 @@ function MovieDetail({
       <Cast>
         {castes !== undefined ? (
           <ul>
-            {castes.map((cast) => {
+            {castes.map((cast, index) => {
               return (
-                <li>
+                <li key={index}>
                   <img src={cast.url_small_image} />
                   <span>{cast.name}</span>
                 </li>
