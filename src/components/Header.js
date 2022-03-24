@@ -18,18 +18,13 @@ const HeaderBlock = styled.div`
   /* top: 0; */
   h1 {
     margin-left: 10px;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
-    &:hover {
-      color: lightcoral;
-    }
+    background: linear-gradient(to right, #f7797d, #fbd786, #c6ffdd);
+    color: transparent;
+    -webkit-background-clip: text;
   }
   a {
     all: unset;
-    transition: all 0.3s ease-in-out;
-    &:hover {
-      color: lightcoral;
-    }
+    cursor: pointer;
   }
 `;
 
@@ -40,10 +35,11 @@ const Nav = styled.nav`
 
   li {
     margin-left: 10px;
-    transition: all 0.3s ease-in-out;
-    cursor: pointer;
+  }
 
-    &:hover:not(:last-child) {
+  a {
+    transition: all 0.3s ease-in-out;
+    &:hover {
       color: lightcoral;
     }
   }
