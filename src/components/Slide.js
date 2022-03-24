@@ -49,6 +49,7 @@ const Slides = styled.div`
   display: flex;
   transform: translateX(${(props) => props.transX}px);
   transition: 0.3s ease-in-out;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 `;
 
 /* React Component */
