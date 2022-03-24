@@ -72,7 +72,7 @@ function Header() {
   return (
     <HeaderBlock className={scroll > 0 ? "visible" : null}>
       <h1>
-        <Link to="/">HOME</Link>
+        <Link to="/">MOVIE</Link>
       </h1>
       <Nav>
         <ul>
