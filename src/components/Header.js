@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { FaGithub } from "react-icons/fa";
 
 /* Styled component */
 const HeaderBlock = styled.div`
@@ -41,7 +42,8 @@ const Nav = styled.nav`
     margin-left: 10px;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
-    &:hover {
+
+    &:hover:not(:last-child) {
       color: lightcoral;
     }
   }
@@ -65,7 +67,14 @@ function Header() {
           <li>
             <Link to="/animation">Animation</Link>
           </li>
-          <li>GitHub</li>
+          <li>
+            <a
+              href="https://github.com/sunday-sunny/react-movie-basic"
+              target="_blank"
+            >
+              <FaGithub />
+            </a>
+          </li>
         </ul>
       </Nav>
     </HeaderBlock>
