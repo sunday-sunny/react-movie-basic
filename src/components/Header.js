@@ -57,9 +57,14 @@ function Header() {
       <Nav>
         <ul>
           <li>
-            <Link to="/rate">HIGH RATE</Link>
+            <Link to="/romance">Romance</Link>
           </li>
-          <li>You Like</li>
+          <li>
+            <Link to="/music">Music</Link>
+          </li>
+          <li>
+            <Link to="/animation">Animation</Link>
+          </li>
           <li>GitHub</li>
         </ul>
       </Nav>

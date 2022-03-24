@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Movie from "../components/Movie";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 /* Styled-Component */
 const Loader = styled.h1`
@@ -14,6 +14,7 @@ const Loader = styled.h1`
   font-size: 48px;
   font-weight: 700;
   font-style: italic;
+  opacity: 0.5;
 `;
 
 const Movies = styled.div`
@@ -30,7 +31,7 @@ const Movies = styled.div`
   }
 `;
 
-const PageTitle = styled.div`
+const Title = styled.div`
   color: white;
   text-align: center;
   font-size: 48px;
@@ -41,16 +42,15 @@ const PageTitle = styled.div`
 
 /* React Component */
 function Rate() {
+  const { genre } = useParams();
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
 
   /* API fetch : Get Movie List */
+  const api =
+    "https://yts.mx/api/v2/list_movies.json?sort_by=like_count&genre=";
   const getMovie = async () => {
-    const json = await (
-      await fetch(
-        "https://yts.mx/api/v2/list_movies.json?minimum_rating=9&sort_by=rating"
-      )
-    ).json();
+    const json = await (await fetch(api + genre)).json();
 
     // Set movie list and loading state
     setMovies(json.data.movies);
@@ -59,7 +59,7 @@ function Rate() {
 
   useEffect(() => {
     getMovie();
-  }, []);
+  }, [genre]);
 
   return (
     <div>
@@ -67,7 +67,7 @@ function Rate() {
         <Loader>Wait a minutes please, Getting Movies</Loader>
       ) : (
         <div>
-          <PageTitle>High Rate Movie List</PageTitle>
+          <Title>{genre.toUpperCase()} Movie List</Title>
           <Movies>
             {movies.map((movie) => (
               <Link to={`/movie/${movie.id}`}>
