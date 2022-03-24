@@ -3,6 +3,43 @@ import Movie from "../components/Movie";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+/* Styled-Component */
+const Loader = styled.h1`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 48px;
+  font-weight: 700;
+  font-style: italic;
+`;
+
+const Movies = styled.div`
+  width: 1250px;
+  margin: 0 auto;
+  margin-top: 100px;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-items: center;
+
+  a {
+    all: unset;
+    cursor: pointer;
+  }
+`;
+
+const PageTitle = styled.div`
+  color: white;
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+  font-style: italic;
+  margin-top: 50px;
+`;
+
+/* React Component */
 function Rate() {
   const [loading, setLoading] = useState(true);
   const [movies, setMovies] = useState([]);
@@ -23,42 +60,6 @@ function Rate() {
   useEffect(() => {
     getMovie();
   }, []);
-
-  /* Styled-Component */
-  const Loader = styled.h1`
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 48px;
-    font-weight: 700;
-    font-style: italic;
-  `;
-
-  const Movies = styled.div`
-    width: 1250px;
-    margin: 0 auto;
-    margin-top: 100px;
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    justify-items: center;
-
-    a {
-      all: unset;
-      cursor: pointer;
-    }
-  `;
-
-  const PageTitle = styled.div`
-    color: white;
-    text-align: center;
-    font-size: 48px;
-    font-weight: 700;
-    font-style: italic;
-    margin-top: 50px;
-  `;
 
   return (
     <div>
